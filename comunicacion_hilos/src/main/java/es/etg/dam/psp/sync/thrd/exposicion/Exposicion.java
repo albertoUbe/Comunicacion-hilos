@@ -5,8 +5,9 @@ import lombok.Data;
 @Data
 public class Exposicion {
 
-    public static String MSG_NUEVO_PLATO = " ha realizado un nuevo plato.";
-    public static String MSG_VENDIDO = " ha vendido un plato.";
+    public static final String MSG_NUEVO_PLATO = " ha realizado un nuevo plato.";
+    public static final String MSG_VENDIDO = " ha vendido un plato.";
+    public static final String MSG_PLATOS = " Platos disponibles: ";
     private int numPlatos;
     private int platos;
 
@@ -33,7 +34,7 @@ public class Exposicion {
             numPlatos--;
             platos--;
             notify();
-            System.out.println(nombre + MSG_VENDIDO + platos);
+            System.out.println(nombre + MSG_VENDIDO + MSG_PLATOS + platos);
         } else {
             wait();
         }
